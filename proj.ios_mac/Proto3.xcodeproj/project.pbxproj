@@ -69,6 +69,8 @@
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
 		F8DFC70119C99F2C00C7E476 /* TestScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8DFC6FF19C99F2C00C7E476 /* TestScene.cpp */; };
 		F8DFC70319C9A74C00C7E476 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = F8DFC70219C9A74C00C7E476 /* ball.png */; };
+		F8DFC70719CAFE6500C7E476 /* anime.png in Resources */ = {isa = PBXBuildFile; fileRef = F8DFC70619CAFE6500C7E476 /* anime.png */; };
+		F8DFC70919CB003C00C7E476 /* anime.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8DFC70819CB003C00C7E476 /* anime.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -268,6 +270,8 @@
 		F8DFC6FF19C99F2C00C7E476 /* TestScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestScene.cpp; path = ../Classes/TestScene.cpp; sourceTree = "<group>"; };
 		F8DFC70019C99F2C00C7E476 /* TestScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestScene.h; path = ../Classes/TestScene.h; sourceTree = "<group>"; };
 		F8DFC70219C9A74C00C7E476 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
+		F8DFC70619CAFE6500C7E476 /* anime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anime.png; sourceTree = "<group>"; };
+		F8DFC70819CB003C00C7E476 /* anime.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = anime.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -456,6 +460,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F8DFC70819CB003C00C7E476 /* anime.plist */,
+				F8DFC70619CAFE6500C7E476 /* anime.png */,
 				F8DFC70219C9A74C00C7E476 /* ball.png */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
 				1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */,
@@ -634,7 +640,9 @@
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
+				F8DFC70719CAFE6500C7E476 /* anime.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
+				F8DFC70919CB003C00C7E476 /* anime.plist in Resources */,
 				F8DFC70319C9A74C00C7E476 /* ball.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,

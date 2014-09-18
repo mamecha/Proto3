@@ -21,7 +21,7 @@ class TestScene : public cocos2d::Layer
   private:
     cocos2d::Point currentpos, prevpos;
     VECTOR velocity; // 座標保存変数と速度ベクトル管理
-    cocos2d::Sprite* ball;
+    cocos2d::Sprite* sprite;
     cocos2d::Sprite* block;
     cocos2d::Sprite* bar; // 画像
     cocos2d::Array *arr;

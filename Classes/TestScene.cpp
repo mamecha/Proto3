@@ -26,12 +26,36 @@ bool TestScene::init()
 {
   if ( !Layer::init() ) return false;
 
-  arr = Array::create();
-  arr->retain();
+  auto cache = CCSpriteFrameCache::getInstance();
+  cache->addSpriteFramesWithFile("anime.plist");
 
-  //putblock();
-  //listing();
+  auto sprite = Sprite::createWithSpriteFrameName("anime_top_2.jpg");
+  sprite->setPosition(Point(500, 500));
+  this->addChild(sprite);
+  sprite->setTag(1);
+  
  
+  auto anime = Animation::create();
+  
+  for (int i=0; i < 2; i++) {
+    int no = 0;
+    if (i > 0) {
+      no = 1;
+    } else {
+      no = 3;
+    }
+    auto str = __String::createWithFormat("anime_top_%i.jpg", no);
+    SpriteFrame *sprite = cache->getSpriteFrameByName(str->getCString());
+    anime->addSpriteFrame(sprite);
+    log("filename: %s", str->getCString());
+  }
+  anime->setDelayPerUnit(0.4f);
+  anime->setRestoreOriginalFrame(true);
+
+  auto action = Animate::create(anime);
+  auto ani = RepeatForever::create(action);
+  sprite->runAction(ani);
+  
   // Event
   auto dispatcher = Director::getInstance()->getEventDispatcher();
   eventListener = EventListenerTouchOneByOne::create();
@@ -44,17 +68,15 @@ bool TestScene::init()
 }
 bool TestScene::onTouchBegan(Touch* pTouch, Event* pEvent)
 {
+  auto location = pTouch->getLocation();
+  auto move = MoveTo::create(1.5f, Point(location.x ,location.y ));
+  auto sprite = this->getChildByTag(1);
+  sprite->runAction(move);
   return true;
 }
 
 void TestScene::onTouchMoved(Touch* pTouch, Event* pEvent)
 {
-  auto location = pTouch->getLocation();
-  CCLog("%f:%f",location.x, location.y);
-  ball = Sprite::create("ball.png");
-  ball->setPosition(location);
-  this->addChild(ball,1,1);
-  ball->runAction(MoveTo::create(1.5f, Point(location.x, 0)));
   return;
 }
 
