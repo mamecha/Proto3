@@ -27,9 +27,33 @@ bool TestScene::init()
   if ( !Layer::init() ) return false;
 
   auto cache = CCSpriteFrameCache::getInstance();
-  cache->addSpriteFramesWithFile("anime.plist");
+  cache->addSpriteFramesWithFile("sprite-0001-default.plist");
+  auto cache_ui = CCSpriteFrameCache::getInstance();
+  cache_ui->addSpriteFramesWithFile("ui-0001-default.plist");
 
-  auto sprite = Sprite::createWithSpriteFrameName("anime_top_2.jpg");
+  Size view = Director::sharedDirector()->getWinSize();
+  log("w: %f, h: %f", view.width, view.height);
+
+  // ui
+  auto btn_a = Sprite::createWithSpriteFrameName("button1.png");
+  btn_a->setPosition(Point(view.width - 128, 64));
+  this->addChild(btn_a);
+  auto btn_b = Sprite::createWithSpriteFrameName("button1.png");
+  btn_b->setPosition(Point(view.width - 128*2, 64));
+  this->addChild(btn_b);
+  auto btn_left = Sprite::createWithSpriteFrameName("button3.png");
+  btn_left->setPosition(Point(128, 64));
+  this->addChild(btn_left);
+  auto btn_right = Sprite::createWithSpriteFrameName("button3.png");
+  btn_right->setPosition(Point(128*2, 64));
+  this->addChild(btn_right);
+ 
+  
+  
+  
+  
+  
+  auto sprite = Sprite::createWithSpriteFrameName("sprite_1.png");
   sprite->setPosition(Point(500, 500));
   this->addChild(sprite);
   sprite->setTag(1);
@@ -37,14 +61,8 @@ bool TestScene::init()
  
   auto anime = Animation::create();
   
-  for (int i=0; i < 2; i++) {
-    int no = 0;
-    if (i > 0) {
-      no = 1;
-    } else {
-      no = 3;
-    }
-    auto str = __String::createWithFormat("anime_top_%i.jpg", no);
+  for (int i=2; i < 6; i++) {
+    auto str = __String::createWithFormat("sprite_%i.png", i);
     SpriteFrame *sprite = cache->getSpriteFrameByName(str->getCString());
     anime->addSpriteFrame(sprite);
     log("filename: %s", str->getCString());

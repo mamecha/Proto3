@@ -1,0 +1,11 @@
+{
+    "sheets": [
+        { 
+            "coordinatesFileName": "ui-0001-default.plist",
+            "textureFileName": "ui-0001-default.png",
+            "width": 352.0,
+            "height": 278.0
+        }
+    ],
+    "signature": "33439f87f72d77eb29dcecf665697a30159178e6"
+}
