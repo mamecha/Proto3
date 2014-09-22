@@ -26,12 +26,22 @@ bool TestScene::init()
 {
   if ( !Layer::init() ) return false;
 
+  Size view = Director::sharedDirector()->getWinSize();
+
+  auto rect = Sprite::create();
+  rect->setTextureRect(Rect(0,0, 10,20));
+  rect->setColor(Color3B(0, 255, 128));
+  rect->setPosition(100, 300);
+  this->addChild(rect);
+  auto cir = DrawNode::create();
+  cir->drawDot(ccp(300, 300), 10, ccc4FFromccc3B(ccWHITE));
+  this->addChild(cir);
+  
   auto cache = CCSpriteFrameCache::getInstance();
   cache->addSpriteFramesWithFile("sprite-0001-default.plist");
   auto cache_ui = CCSpriteFrameCache::getInstance();
   cache_ui->addSpriteFramesWithFile("ui-0001-default.plist");
 
-  Size view = Director::sharedDirector()->getWinSize();
   log("w: %f, h: %f", view.width, view.height);
 
   // ui
@@ -61,13 +71,13 @@ bool TestScene::init()
  
   auto anime = Animation::create();
   
-  for (int i=2; i < 6; i++) {
+  for (int i=2; i < 5; i++) {
     auto str = __String::createWithFormat("sprite_%i.png", i);
     SpriteFrame *sprite = cache->getSpriteFrameByName(str->getCString());
     anime->addSpriteFrame(sprite);
     log("filename: %s", str->getCString());
   }
-  anime->setDelayPerUnit(0.4f);
+  anime->setDelayPerUnit(0.2f);
   anime->setRestoreOriginalFrame(true);
 
   auto action = Animate::create(anime);
